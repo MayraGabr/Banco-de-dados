@@ -11,4 +11,3 @@ Projeto acadêmico desenvolvido para a disciplina de Banco de Dados, com modelag
 *Arquivos:
 * DER do sistema
 * Script SQL
-* Relatório do projeto
