@@ -156,17 +156,17 @@ INSERT INTO Tipo (nome) VALUES
 ('Pulseira'),
 ('Anel'),
 ('Brinco'),
-('AlianÁa');
+('Alian√ßa');
 
 INSERT INTO Produto (nome, material, preco, codigo_tipo) VALUES
-('Colar PÈrola', 'Ouro', 2000.00, 1),
-('Pulseira CoraÁ„o', 'Prata', 100.00, 2),
-('Anel CoraÁ„o', 'Ouro', 300.00, 3);
+('Colar P√©rola', 'Ouro', 2000.00, 1),
+('Pulseira Cora√ß√£o', 'Prata', 100.00, 2),
+('Anel Cora√ß√£o', 'Ouro', 300.00, 3);
 
 INSERT INTO Cliente (cpf, nome, telefone, email) VALUES
 ('11111111111', 'Ana Clara', '86911111111', 'Ana@email.com'),
 ('22222222222', 'Luiz Silva', '86922222222', 'Luiz@email.com'),
-('55555555555', 'Jo„o Carlos', '86955555555', 'Joao@email.com');
+('55555555555', 'Jo√£o Carlos', '86955555555', 'Joao@email.com');
 
 INSERT INTO Funcionario (cpf, nome, telefone, cargo) VALUES
 ('33333333333', 'Bianca Sousa', '86933333333', 'Vendedora'),
@@ -188,9 +188,9 @@ INSERT INTO Personalizacao (valor, material, codigo_venda, codigo_tipo) VALUES
 
 -- Procuras:
 
-SELECT * FROM Cliente WHERE cpf = '11111111111'; -- Um cliente especÌfico.
+SELECT * FROM Cliente WHERE cpf = '11111111111'; -- Um cliente espec√≠fico.
 
-SELECT * FROM Funcionario WHERE cargo = 'Vendedora'; -- Funcion·rios por cargo.
+SELECT * FROM Funcionario WHERE cargo = 'Vendedora'; -- Funcion√°rios por cargo.
 
 -- Adicionando uma compra:
 
@@ -199,7 +199,7 @@ VALUES (4, NOW(), 500.00, '11111111111', '33333333333');
 INSERT INTO Venda_has_Produto (codigo_venda, codigo_produto) VALUES
 (4, 2);
 
--- Por cpf aparece as informaÁıes do cliente e todas as compras com informaÁıes da venda:
+-- Por cpf aparece as informa√ß√µes do cliente e todas as compras com informa√ß√µes da venda:
 
 SELECT
     c.*,         
@@ -213,7 +213,7 @@ LEFT JOIN Venda v ON v.cpf_cliente = c.cpf
 LEFT JOIN Venda_has_Produto vp ON vp.codigo_venda = v.codigo_venda
 WHERE c.cpf = '11111111111';
 
--- Deletando um funcion·rio por cpf. Transferi as vendas para outro funcion·rio para n„o perder os registros:
+-- Deletando um funcion√°rio por cpf. Transferi as vendas para outro funcion√°rio para n√£o perder os registros:
 
 UPDATE Venda
 SET cpf_funcionario = '33333333333'
